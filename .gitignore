@@ -1,0 +1,75 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.installed.cfg
+pip-wheel-metadata/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# ---------- Notebooks ----------
+.ipynb_checkpoints/
+
+# ---------- Modelos e dados ----------
+# Pesos treinados não vão no repo (refazer via scripts/)
+*.pkl
+*.pth
+*.pt
+*.h5
+*.hdf5
+*.onnx
+*.joblib
+*.npz
+*.npy
+
+# Dados de imagem (PEVA/PESC — acesso restrito por ética)
+# Anchored to root so it doesn't match src/data/ (Python package)
+/data/
+/datasets/
+PEVA/
+PESC/
+*.bmp
+*.tif
+*.tiff
+*.raw
+
+# Resultados/artefatos gerados pelos scripts
+results/
+outputs/
+logs/
+runs/
+mlruns/
+wandb/
+*.log
+
+# ---------- Figuras geradas ----------
+# Descomente se não quiser versionar figuras geradas pelos scripts:
+# figures/
+
+# ---------- Sistema ----------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# ---------- IDE ----------
+.vscode/
+.idea/
+*.iml
+
+# ---------- Configs locais ----------
+.env
+.env.local
+config.local.yaml

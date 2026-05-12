@@ -1,0 +1,68 @@
+# Configuração centralizada dos experimentos
+# Dissertação: Classificação de imagens de plasma — PEVA/PESC
+
+# Paths are resolved from the working directory (run scripts from the repo root).
+# Place the PEVA/PESC image directories under ./data/ or symlink them.
+paths:
+  project_root: "."
+  peva_dir: "data/PEVA"
+  pesc_dir: "data/PESC"
+  results_dir: "results"
+  figures_dir: "results/figures"
+  logs_dir: "results/logs"
+  article_figures_dir: "results/article_figures"
+
+data:
+  image_extension: "*.bmp"
+  image_size: [224, 224]
+  patient_id_regex: '_(\d+)(?:-\d+)?$'
+  positive_label: 1
+  negative_label: 0
+
+preprocessing:
+  target_size: 224
+  min_mean_intensity: 0.15    # rejeitar imagens completamente pretas (P1~0.14)
+  max_mean_intensity: 245     # rejeitar imagens muito claras/saturadas
+  normalization: "imagenet"   # mean/std do ImageNet para transfer learning
+
+augmentation:
+  rotation_limit: 360
+  horizontal_flip: true
+  vertical_flip: true
+  brightness_limit: 0.1
+  noise_var_limit: 0.01
+
+splitting:
+  n_folds: 5
+  test_size: 0.15            # hold-out test set (por paciente)
+  random_seed: 42
+
+baseline:
+  random_forest:
+    n_estimators: 500
+    class_weight: "balanced"
+    random_state: 42
+  svm_rbf:
+    kernel: "rbf"
+    class_weight: "balanced"
+    random_state: 42
+  svm_linear:
+    kernel: "linear"
+    class_weight: "balanced"
+    random_state: 42
+
+cnn:
+  architectures: ["resnet50", "efficientnet_b0", "mobilenetv2"]
+  frozen_epochs: 5
+  finetune_epochs: 25
+  batch_size: 32
+  learning_rate: 0.001
+  finetune_lr: 0.0001
+  weight_decay: 0.0001
+  early_stopping_patience: 7
+  mixed_precision: true
+  num_workers: 4
+
+reproducibility:
+  seed: 42
+  deterministic: true
