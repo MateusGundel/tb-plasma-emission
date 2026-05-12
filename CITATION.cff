@@ -17,7 +17,7 @@ authors:
     affiliation: "Universidade de Santa Cruz do Sul (UNISC)"
 version: 1.0.0
 date-released: "2026-05-12"
-doi: 10.5281/zenodo.20136402
+doi: 10.5281/zenodo.20136278
 license: Apache-2.0
 repository-code: "https://github.com/MateusGundel/tb-plasma-emission"
 keywords:
