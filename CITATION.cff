@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the article and the software via the DOI below."
+type: software
+title: "tb-plasma-emission: pipeline for tuberculosis detection from plasma-emission images of exhaled breath"
+abstract: "Source code for the BSPC 2026 paper on tuberculosis detection from plasma-emission images of exhaled breath, captured by the BDEE-Device. Includes preprocessing, classical baselines (Random Forest, SVM), CNN architectures with transfer learning (ResNet-50, EfficientNet-B0, MobileNetV2), Grad-CAM interpretability, blob-cropping ablation and PEVA/PESC domain-shift analysis."
+authors:
+  - family-names: Gündel
+    given-names: Mateus Elias
+    email: gundel5@mx2.unisc.br
+    orcid: "https://orcid.org/0009-0000-5124-1814"
+    affiliation: "Universidade de Santa Cruz do Sul (UNISC)"
+  - family-names: Helfer
+    given-names: Gilson Augusto
+    affiliation: "Universidade de Santa Cruz do Sul (UNISC)"
+  - family-names: Molz
+    given-names: Rolf Fredi
+    affiliation: "Universidade de Santa Cruz do Sul (UNISC)"
+version: 1.0.0
+date-released: "2026-05-12"
+doi: 10.5281/zenodo.20136279
+license: Apache-2.0
+repository-code: "https://github.com/MateusGundel/tb-plasma-emission"
+keywords:
+  - tuberculosis
+  - plasma emission
+  - exhaled breath
+  - deep learning
+  - transfer learning
+  - convolutional neural networks
+  - point-of-care diagnostics
+  - BDEE-Device
+preferred-citation:
+  type: article
+  title: "Tuberculosis detection from plasma-emission images of exhaled breath using convolutional neural networks"
+  authors:
+    - family-names: Gündel
+      given-names: Mateus Elias
+      orcid: "https://orcid.org/0009-0000-5124-1814"
+    - family-names: Helfer
+      given-names: Gilson Augusto
+    - family-names: Molz
+      given-names: Rolf Fredi
+  journal: "Biomedical Signal Processing and Control"
+  year: 2026
+  notes: "Submitted"
